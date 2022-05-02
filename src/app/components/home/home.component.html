@@ -1,0 +1,39 @@
+<div class="filters">
+    <mat-form-field>
+      <mat-label>Sort</mat-label>
+      <mat-select
+        panelClass="sort-select"
+        [(ngModel)]="sort"
+        (selectionChange)="getCountries(sort)"
+      >
+        <mat-option value="country">Country Ascending</mat-option>
+        <mat-option value="continent">Continent Ascending</mat-option>
+        <mat-option value="cases">Current Cases Ascending</mat-option>
+        <mat-option value="critical">Critical Cases Ascending</mat-option>
+        <mat-option value="deaths">New Deaths Ascending</mat-option>
+        <mat-option value="total deaths">Total Deaths Ascending</mat-option>
+        <mat-option value="tests">Tests Ascending</mat-option>
+
+        <mat-option value="-country">Country Descending</mat-option>
+        <mat-option value="-continent">Continent Descending</mat-option>
+        <mat-option value="-cases">Current Cases Descending</mat-option>
+        <mat-option value="-critical">Critical Case Descending</mat-option>
+        <mat-option value="-deaths">New Deaths Descending</mat-option>
+        <mat-option value="-total deaths">Total Deaths Descending</mat-option>
+        <mat-option value="-tests">Tests Descending</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+<div class="countries">
+    <ng-container *ngFor="let country of countries">
+        <div class="country">
+            <p class="country-name"> {{country.country}} </p>
+            <p> {{country.continent}} </p>
+            <p> Population: {{country.population}} </p>
+            <p class="country-cases"> Cases: {{country.cases['active']}} | Critical: {{country.cases['critical']}}</p>
+            <p class="country-deaths">New deaths: {{country.deaths['new']}} | Total Deaths: {{country.deaths['total']}}</p>
+            <p class="country-tests">Tests: {{country.tests['total']}}</p>
+        </div>
+    </ng-container>
+</div>

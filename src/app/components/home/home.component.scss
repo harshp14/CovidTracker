@@ -1,0 +1,30 @@
+.filter{
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    color: black;
+    }
+
+    ::ng-deep {
+        .mat-form-field-infix{
+            background-color: #fbfbfb;
+        }
+    }
+
+    .countries {
+        display: grid;
+        grid: 220px/ auto auto auto;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        color: white;
+    }
+
+    .country-name {
+        font-size: 20px;
+        font-weight:800;
+    }
+
+    .country {
+        padding-bottom: 30px;
+        padding-right: 30px;
+    }
